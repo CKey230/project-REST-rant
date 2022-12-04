@@ -2,3 +2,16 @@ h1 {
     text-align: center;
     color: cornflowerblue;
 }
+
+.btn-primary {
+    background-color: cornflowerblue;
+    color: white;
+    margin-left: 20%;
+}
+
+.img1 {
+    margin-left: 20%;
+}
+.img2{
+    margin-left: 30%;
+}
