@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   if (!req.body.pic) {
-    // Default image if one is not provided
+   
     req.body.pic = "http://placekitten.com/400/400";
   }
   if (!req.body.city) {
@@ -71,17 +71,17 @@ router.delete("/:id", (req, res) => {
   }
 });
 
-router.get("/:id/edit", (req, res) => {
-  const { id } = req.params
-  const data = places[id]
-  if (isNaN(id)) {
-    res.render("error404");
+router.get('/:id/edit', (req, res) => {
+  let id=Number(req.params.id)
+  if(isNaN(id)) {
+      res.render('error404')
   } else if (!places[id]) {
-    res.render("error404");
+      res.render('error404')
   } else {
-    res.render("places/edit", { place: places[id]});
+
+      res.render('places/edit', { place: places[id], id })
   }
-});
+})
 
 module.exports = router
 
