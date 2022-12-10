@@ -7,23 +7,23 @@ function edit_form ( data ) {
       <main>
         <h1>Edit Place</h1>
         <form method="POST" action={`/places/${data.id}?_method=PUT`}>
-          <div className='form-group'>
+          <div className='col-sm-6 cik-md-4 col-lg-3'>
             <label htmlFor='name'>Place Name</label>
             <input className='form-control' id='name' name='name' defaultValue={data.place.name} required />
           </div>
-          <div className='form-group'>
+          <div className='col-sm-6 cik-md-4 col-lg-3'>
             <label htmlFor='pic'>Place Picture</label>
             <input className='form-control' id='pic' name='pic' defaultValue={data.place.pic}  />
           </div>
-          <div className='form-group'>
+          <div className='col-sm-6 cik-md-4 col-lg-3'>
             <label htmlFor='city'>City</label>
             <input className='form-control' id='city' name='city' defaultValue={data.place.city} />
           </div>
-          <div className='form-group'>
+          <div className='col-sm-6 cik-md-4 col-lg-3'>
             <label htmlFor='state'>State</label>
             <input className='form-control' id='state' name='state' defaultValue={data.place.state} />
           </div>
-          <div className='form-group'>
+          <div className='col-sm-6 cik-md-4 col-lg-3'>
             <label htmlFor='cuisines'>Cuisines</label>
             <input className='form-control' id='cuisines' name='cuisines' defaultValue={data.place.cuisines} required />
           </div>
