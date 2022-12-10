@@ -1,8 +1,10 @@
 //modules and globals
-require('dotenv').config()
 const express = require('express')
-const app = express()
 const methodOverride = require('method-override')
+require('dotenv').config()
+
+
+const app = express()
 
 
 //express settings
@@ -24,6 +26,10 @@ app.get('/', (req,res) => {
 app.get('*', (req,res) => {
     res.render('error404')
 })
+
+
+
 //listen for connections
 app.listen(process.env.PORT)
+    console.log(`Currently listening on ${process.env.PORT}...`)
 
