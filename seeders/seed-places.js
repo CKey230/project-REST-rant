@@ -16,10 +16,8 @@ db.Place.create([{
     founded: 2020
 }])
 .then(() => {
-    console.log('Success!')
     process.exit()
 })
 .catch(err => {
-    console.log('Failure!', err)
     process.exit()
 })

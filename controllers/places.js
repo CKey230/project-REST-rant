@@ -38,7 +38,6 @@ router.post('/', (req, res) => {
 
 router.get('/new', (req, res) => {
   let message = 'Validation Error:'
-
   res.render('places/new', { message })
 })
 //show route
@@ -53,20 +52,22 @@ router.get('/:id', (req, res) => {
   })
 })
 
-router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+router.put('/:id', async (req, res) => {
+  const { id } = req.params
+  await db.Place.findByIdAndUpdate(id, req.body)
+  res.redirect(`/places/${id}`)
 })
 
 router.delete('/:id', (req, res) => {
-  db.Place.findByIdAndDelete(req.params.id)
+  const { id } = req.params
+  db.Place.findByIdAndDelete(id)
       .then(() => {
           res.redirect('/places')
       })
-      .catch(err => {
-          console.log('err', err)
-          res.render('error404')
+      .catch((err) => {
+          console.log("Error!", err)
       })
-})
+    })
 
 router.get('/:id/edit', (req, res) => {
   db.Place.findById(req.params.id)
