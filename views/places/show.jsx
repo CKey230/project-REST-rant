@@ -42,8 +42,8 @@ function show(data) {
                     
                 </div>
                 <hr />
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                    Edit
+                <a href={`/places/${data.id}/edit`} >
+                    <button className="btn btn-warning" >Edit</button>
                 </a>    
 
 

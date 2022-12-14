@@ -30,7 +30,7 @@ function new_form() {
                 </div>
                 <div className='col-sm-6 cik-md-4 col-lg-3'>
                     <label for="founded">Founded Year</label>
-                    <input className="form-control" id="founded" name="founded" />
+                    <input className="form-control" id="founded" name="founded" value={new Date().getFullYear()} />
                 </div>
                 <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
