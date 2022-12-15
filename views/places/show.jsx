@@ -12,7 +12,22 @@ function show(data) {
             Not yet rated
         </h3>
     )
-
+    
+        if (data.place.comments.length) {
+          comments = data.place.comments.map(c => {
+            return (
+              <div className="border">
+                <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+                <h4>{c.content}</h4>
+                <h3>
+                  <stong>- {c.author}</stong>
+                </h3>
+                <h4>Rating: {c.stars}</h4>
+              </div>
+            )
+          })
+        }
+      
     return (
         <Def>
             <div className="row">
@@ -39,20 +54,21 @@ function show(data) {
                         Serving {data.place.cuisines}
                     </h4>
                     
-                    
                 </div>
                 <hr />
                 <a href={`/places/${data.id}/edit`} >
                     <button className="btn btn-warning" >Edit</button>
                 </a>    
 
-
                 <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
                     <button type="submit" className="btn btn-danger">
                         Delete
                     </button>
                 </form>     
-               
+            </div>
+            <div className='Item-place-comments'>
+                <h2>Comments</h2>
+                {comments}
             </div>
             
            
