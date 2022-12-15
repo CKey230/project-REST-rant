@@ -66,11 +66,32 @@ function show(data) {
                     </button>
                 </form>     
             </div>
+
             <div className='Item-place-comments'>
                 <h2>Comments</h2>
                 {comments}
             </div>
-            
+
+            <form method='POST' action={`/places/${data.place.id}/comment`}>
+
+          <div className='form-group'>
+            <label htmlFor='author'>Author</label>
+            <input className='form-control' id='author' name='author'/>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='comments'>Comment</label>
+            <input className='form-control' id='comments' name='comments' type='textarea' />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='stars'>Star Rating</label>
+            <input className='form-control' id='stars' name='stars' type='range' step='0.5' min='0' max='5' />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='rant'>Rant</label>
+            <input  id='rant' name='rant' type='checkbox' defaultChecked/>
+          </div>
+          <input className='btn btn-primary' type='submit' value='Add Comment' />
+        </form>
            
         </Def>
     )
