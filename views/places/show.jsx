@@ -7,17 +7,12 @@ function show(data) {
             No comments yet!
         </h3>
     )
-    let rating = (
-        <h3 className="inactive">
-            Not yet rated
-        </h3>
-    )
     
         if (data.place.comments.length) {
           comments = data.place.comments.map(c => {
             return (
               <div className="border">
-                <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+                <h2 className='rant'>{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
                 <h4>{c.content}</h4>
                 <h3>
                   <stong>- {c.author}</stong>
@@ -39,10 +34,6 @@ function show(data) {
                 </div>
                 <div className="col-sm-6">
                     <h1>{data.place.name}</h1>
-                    <h2>
-                        Rating
-                    </h2>
-                    {rating}
                     <br />
                     <h2>
                         Description
@@ -72,25 +63,26 @@ function show(data) {
                 {comments}
             </div>
 
-            <form method='POST' action={`/places/${data.place.id}/comment`}>
-
-          <div className='form-group'>
+            <form className="row g-3" method='POST' action={`/places/${data.place.id}/comment`}>
+            <div className='col-md-6'>
             <label htmlFor='author'>Author</label>
             <input className='form-control' id='author' name='author'/>
           </div>
-          <div className='form-group'>
+          <div className='col-md-6'>
             <label htmlFor='comments'>Comment</label>
             <input className='form-control' id='comments' name='comments' type='textarea' />
           </div>
-          <div className='form-group'>
+          <div className='col-md-6'>
             <label htmlFor='stars'>Star Rating</label>
             <input className='form-control' id='stars' name='stars' type='range' step='0.5' min='0' max='5' />
           </div>
-          <div className='form-group'>
+          <div className='col-md-6'>
             <label htmlFor='rant'>Rant</label>
             <input  id='rant' name='rant' type='checkbox' defaultChecked/>
           </div>
+          <div className ='col-md-6'>
           <input className='btn btn-primary' type='submit' value='Add Comment' />
+          </div>
         </form>
            
         </Def>
