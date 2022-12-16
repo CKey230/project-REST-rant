@@ -44,3 +44,12 @@ main {
     margin-left: 20px;
     background-color: white;
 }
+
+.item-place-buttons {
+    display: flex;
+    flex-flow: row;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 4;
+    margin:auto;
+}

@@ -36,7 +36,6 @@ router.post('/', (req, res) => {
 })
 
 router.post("/:id/rant", (req, res) => {
-  console.log(req.body)
   if (req.body.rant) {
     req.body.rant = true;
   } else {
