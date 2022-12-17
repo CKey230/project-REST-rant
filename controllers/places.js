@@ -112,8 +112,18 @@ router.get('/:id/rant', (req, res) => {
     })
 })
 
-router.delete('/:id/rant/:rantId', (req, res) => {
-  res.send('GET /places/:id/rant/:rantId stub')
+router.delete('/:id/comment/:commentId', (req, res) => {
+  db.Place.findOne({ id: req.params.id })
+  .then((place) => {
+    db.Comment.findByIdAndDelete(req.params.commentId).then((place) => {
+      res.redirect(`/places/${req.params.id}`)
+    }) 
+   })
+   .catch((err) => {
+    console.log("err", err)
+    res.render("error404")
+   })
+
 })
 
 
