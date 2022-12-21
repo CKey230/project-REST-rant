@@ -1,13 +1,8 @@
 //modules and globals
+require('dotenv').config()
 const express = require('express')
 const methodOverride = require('method-override')
-const commentRoute = require("./models/comment")
-require('dotenv').config()
-
-
 const app = express()
-
-app.use('/comment', commentRoute)
 
 
 //express settings
@@ -30,10 +25,9 @@ app.get('*', (req,res) => {
     res.render('error404')
 })
 
-const PORT = process.env.PORT 
 
 //listen for connections
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`))
 
-module.exports = app; 
+module.exports = app;
 
