@@ -1,11 +1,4 @@
 {
-  "name": "rest-rant1",
-  "version": "1.0.0",
-  "description": "REST-Rant is an app where users can review restaurants.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -14,20 +7,6 @@
     "mongoose": "^6.8.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
-  },
-  "engines": {
-    "node": "18.12.1"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CKey230/project-REST-rant.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CKey230/project-REST-rant/issues"
-  },
-  "homepage": "https://github.com/CKey230/project-REST-rant#readme"
+  }
+
 }
