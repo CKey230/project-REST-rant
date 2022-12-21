@@ -27,7 +27,7 @@ app.get('*', (req,res) => {
     res.render('error404')
 })
 
-
+const PORT = process.env.PORT
 
 //listen for connections
 app.listen(process.env.PORT)
