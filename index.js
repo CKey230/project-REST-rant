@@ -1,10 +1,13 @@
 //modules and globals
 const express = require('express')
 const methodOverride = require('method-override')
+const commentRoute = require("./models/comment")
 require('dotenv').config()
 
 
 const app = express()
+
+app.use('/comment', commentRoute)
 
 
 //express settings
