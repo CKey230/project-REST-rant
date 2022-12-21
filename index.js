@@ -33,3 +33,5 @@ const PORT = process.env.PORT
 app.listen(process.env.PORT)
     console.log(`Currently listening on ${process.env.PORT}...`)
 
+module.exports.app
+
