@@ -32,5 +32,5 @@ const PORT = process.env.PORT
 //listen for connections
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`))
 
-module.exports.app;
+
 
